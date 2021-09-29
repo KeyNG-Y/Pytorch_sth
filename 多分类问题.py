@@ -76,8 +76,8 @@ for epoch in range(epochs):
         logits = forward(data)
         test_loss += criterion(logits, target).item()
         ##显示精度的区别，item()返回的是一个浮点型数据，在求loss或者accuracy时，一般使用item()，而不是直接取。
-        pred = logits.data.max(1)[1]
-        correct += pred.eq(target.data).sum()
+        pred = logits.data.max(1)[1]#------------------------------------------------------------------------->①
+        correct += pred.eq(target.data).sum()----------------------------------------------------------------->②
     test_loss /= len(test_loader.dataset)
     print("\nTest set:Average loss:{:.4f},Accuracy:{}/{} ({:.0f}%)\n".format(
         test_loss, correct, len(test_loader.dataset),
