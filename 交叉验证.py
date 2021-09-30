@@ -1,4 +1,4 @@
-##Train Set+Val Set+Test Set
+##Train Set + Val Set +Test Set
 
 import torch
 from torchvision import transforms, datasets
